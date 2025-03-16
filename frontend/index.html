@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Betting Website</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+    <h1>Who Will He Date?</h1>
+    <div id="register">
+      <h2>Register</h2>
+      <input type="text" id="username" placeholder="Username">
+      <input type="password" id="password" placeholder="Password">
+      <button onclick="register()">Register</button>
+    </div>
+    <div id="betting" style="display: none;">
+      <h2>Place Your Bet</h2>
+      <ul id="girls-list"></ul>
+      <p>Your Points: <span id="points">100</span></p>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
