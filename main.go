@@ -54,6 +54,9 @@ func main() {
 	r.HandleFunc("/place-bet", placeBetHandler).Methods("POST")
 	r.HandleFunc("/girls", getGirlsHandler).Methods("GET")
 
+	// Serve static files (HTML, CSS, JS)
+	r.PathPrefix("/").Handler(http.FileServer(http.Dir("./public")))
+
 	// Start server
 	fmt.Println("Server running on :3000")
 	log.Fatal(http.ListenAndServe(":3000", r))

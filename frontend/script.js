@@ -1,6 +1,6 @@
 let currentUser = null;
 
-// Register a new user
+
 async function register() {
   const username = document.getElementById('username').value;
   const password = document.getElementById('password').value;
@@ -22,7 +22,7 @@ async function register() {
   }
 }
 
-// Load girls to bet on
+
 async function loadGirls() {
   const response = await fetch('/girls');
   const girls = await response.json();
@@ -39,12 +39,12 @@ async function loadGirls() {
     .join('');
 }
 
-// Place a bet
+
 async function placeBet(girlId) {
   const response = await fetch('/place-bet', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ userId: currentUser, girlId, betAmount: 10 }),
+    body: JSON.stringify({ user_id: currentUser, girl_id: girlId, bet_amount: 10 }),
   });
 
   const data = await response.json();
